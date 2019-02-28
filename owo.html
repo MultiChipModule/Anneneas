@@ -9,15 +9,20 @@
 <p>Please OwO</p>
 
 <button onclick="myFunction()">Click To OwO</button>
+<button onclick="stop()">Stop</button>
 
 <p id="demo"></p>
 
 <script>
 
-
+var nogeenkeer = true;
+var inter;
 
 function myFunction() {
-	var inter = setInterval(myFunction, 1);
+  if (nogeenkeer) {
+    inter = setInterval(myFunction, 1);
+    nogeenkeer = false;
+  }
   var i = 0;
   var str = "OwO";
   for(x = 0; x < str.length; x++){
@@ -28,6 +33,10 @@ function myFunction() {
   document.getElementById("demo").innerHTML += ' '
   
   
+}
+function stop(){
+  clearInterval(inter);
+  nogeenkeer = true;
 }
 </script>
 
